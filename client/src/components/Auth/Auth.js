@@ -65,11 +65,17 @@ const Auth = () => {
                 )}
                 <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                 <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-                { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
+
+              { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
+                
               </Grid>
+              <br />
+                <br />
               <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                 { isSignup ? 'Sign Up' : 'Sign In' }
               </Button>
+              <br />
+              <br />
               <GoogleLogin
                 clientId="810937292995-1dpuoikbhisijoe8ttpoogliap1sttmu.apps.googleusercontent.com"
                 render={(renderProps) => (
@@ -81,6 +87,8 @@ const Auth = () => {
                 onFailure={googleError}
                 cookiePolicy="single_host_origin"
               />
+              <br />
+              <br />
               <Grid container justify="flex-end">
                 <Grid item>
                   <Button onClick={switchMode}>
